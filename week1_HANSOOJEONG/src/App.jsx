@@ -1,15 +1,24 @@
 import React from 'react';
 import Greeting from './Greeting'; 
 import Cat from './Cat'; 
+import CatList from './CatList'; 
+
 const App = () => {
-    const catName = "화사"; // 변수 선언
-    const catAge = 9; // 나이
+    const catName = "화사"; 
+    const catAge = 9; 
+
+    const cats = [
+        { name: "화사", age: 9 },
+        { name: "밤식이", age: 8 },
+        { name: "로이", age: 5 }
+    ];
 
     return (
         <div>
-            <h1>안녕하세요!</h1>
-            <Greeting name={catName} /> {/* Greeting 컴포넌트에 props 전달 */}
-            <Cat age={catAge} /> {/* Profile 컴포넌트에 props 전달 */}
+            <h1>고양이 월드에 오신 것을 환영합니다!</h1>
+            <Greeting name={catName} /> 
+            <Cat age={catAge} />
+            <CatList cats={cats} />
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import Cat from './Cat'; // Cat 컴포넌트 import
+import Cat from './Butler'; 
 
 const CatList = ({ cats }) => {
     return (

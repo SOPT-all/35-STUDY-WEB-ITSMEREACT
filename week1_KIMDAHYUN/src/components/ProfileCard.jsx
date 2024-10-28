@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 
+// ProfileCard 컴포넌트 정의 및 export
 function ProfileCard({ name, role }) {
   return (
     <div style={{
@@ -17,9 +18,27 @@ function ProfileCard({ name, role }) {
   );
 }
 
+// MemberList 컴포넌트 정의 및 export
+export function MemberList() {
+  return (
+    <div>
+      <h2>나리스 스터디원</h2>
+      <ul>
+        <li>김다현 (YB)</li>
+        <li>김건휘 (OB)</li>
+        <li>김가현 (YB)</li>
+        <li>이윤지 (YB)</li>
+        <li>한수정 (YB)</li>
+        <li>박채연 (OB)</li>
+      </ul>
+    </div>
+  );
+}
+
 ProfileCard.propTypes = {
-  name: PropTypes.string.isRequired, 
-  role: PropTypes.string.isRequired 
+  name: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired
 };
 
+// ProfileCard default export로 내보내기
 export default ProfileCard;

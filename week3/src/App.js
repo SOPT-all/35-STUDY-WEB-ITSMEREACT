@@ -42,39 +42,68 @@
 //   );
 // }
 
-function Button({ onClick, children }) {
-  return (
-    <button onClick={onClick}>
-      {children}
-    </button>
-  );
-}
+// // 이벤트 핸들러에서 props로 전달하기
 
-function PlayButton({ movieName }) {
-  function handlePlayClick() {
-    alert(`Playing ${movieName}!`);
-  }
+// function Button({ onClick, children }) {
+//   return (
+//     <button onClick={onClick}>
+//       {children}
+//     </button>
+//   );
+// }
 
-  return (
-    <Button onClick={handlePlayClick}>
-      Play "{movieName}"
-    </Button>
-  );
-}
+// function PlayButton({ movieName }) {
+//   function handlePlayClick() {
+//     alert(`Playing ${movieName}!`);
+//   }
 
-function UploadButton() {
-  return (
-    <Button onClick={() => alert('Uploading!')}>
-      Upload Image
-    </Button>
-  );
-}
+//   return (
+//     <Button onClick={handlePlayClick}>
+//       Play "{movieName}"
+//     </Button>
+//   );
+// }
 
-export default function Toolbar() {
+// function UploadButton() {
+//   return (
+//     <Button onClick={() => alert('Uploading!')}>
+//       Upload Image
+//     </Button>
+//   );
+// }
+
+// export default function Toolbar() {
+//   return (
+//     <div>
+//       <PlayButton movieName="Kiki's Delivery Service" />
+//       <UploadButton />
+//     </div>
+//   );
+// }
+
+const ControlPanel = () => {
   return (
-    <div>
-      <PlayButton movieName="Kiki's Delivery Service" />
-      <UploadButton />
+    <div
+      onClick={() => {
+        alert("<div>요소를 클릭했습니다!");
+      }}
+    >
+      <button
+        onClick={() => {
+          alert("Play 버튼을 클릭했습니다!");
+        }}
+      >
+        ▶ Play
+      </button>
+      <button
+        onClick={() => {
+          alert("Stop 버튼을 클릭했습니다!");
+        }}
+      >
+        ▣ Stop
+      </button>
     </div>
   );
-}
+};
+
+export default ControlPanel;

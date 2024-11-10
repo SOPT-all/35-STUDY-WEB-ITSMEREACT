@@ -81,6 +81,7 @@
 //   );
 // }
 
+//이벤트 전파 
 const ControlPanel = () => {
   return (
     <div
@@ -89,14 +90,16 @@ const ControlPanel = () => {
       }}
     >
       <button
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation(); // 이벤트 전파 멈추기
           alert("Play 버튼을 클릭했습니다!");
         }}
       >
         ▶ Play
       </button>
       <button
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation();
           alert("Stop 버튼을 클릭했습니다!");
         }}
       >

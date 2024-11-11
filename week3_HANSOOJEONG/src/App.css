@@ -1,42 +1,66 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App.css */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  flex-direction: column;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2열 */
+  grid-template-rows: repeat(2, 1fr); /* 2행 */
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.app-button:hover {
+  background-color: #45a049;
 }
 
-.card {
-  padding: 2em;
+.app-button:active {
+  background-color: #3e8e41;
 }
 
-.read-the-docs {
-  color: #888;
+button:focus {
+  outline: none;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.component-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc; 
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }

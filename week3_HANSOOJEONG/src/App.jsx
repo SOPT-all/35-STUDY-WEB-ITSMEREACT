@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import Responding from './conponents/Responding';
+import ComponentsMemory from './conponents/ComponentsMemory';
+import RenderCommit from './conponents/RenderCommit';
+import Snapshot from './conponents/Snapshot';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [currentComponent, setCurrentComponent] = useState(null);
+
+  const handleClick = (component) => {
+    setCurrentComponent(component);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-container">
+      <div className="button-container">
+        <button onClick={() => handleClick('Responding')} className="app-button">이벤트에 응답하기</button>
+        <button onClick={() => handleClick('ComponentsMemory')} className="app-button">State: 컴포넌트의 기억 저장소</button>
+        <button onClick={() => handleClick('RenderCommit')} className="app-button">렌더링 그리고 커밋</button>
+        <button onClick={() => handleClick('Snapshot')} className="app-button">스냅샷으로서의 state</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+      <div className="component-container">
+        {currentComponent === 'Responding' && <Responding />}
+        {currentComponent === 'ComponentsMemory' && <ComponentsMemory />}
+        {currentComponent === 'RenderCommit' && <RenderCommit />}
+        {currentComponent === 'Snapshot' && <Snapshot />}
+      </div>
+    </div>
+  );
+};
+
+
+export default App;

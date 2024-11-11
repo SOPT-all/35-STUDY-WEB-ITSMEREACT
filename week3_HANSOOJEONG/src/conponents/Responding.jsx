@@ -4,7 +4,7 @@ const Responding = () => {
   const [response, setResponse] = useState(false);
 
   const handleClick = () => {
-    setResponse(!response); // 클릭할 때마다 응답 상태가 변경
+    setResponse(!response);
   };
 
   return (

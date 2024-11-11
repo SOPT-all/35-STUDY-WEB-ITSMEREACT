@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
 const ComponentsMemory = () => {
-  const [counter, setCounter] = useState(0); // 컴포넌트의 상태를 기억
-
+  const [counter, setCounter] = useState(0);
   const increment = () => {
-    setCounter(counter + 1); // 상태값을 증가시키는 함수
+    setCounter(counter + 1);
   };
 
   return (

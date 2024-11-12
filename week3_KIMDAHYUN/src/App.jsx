@@ -1,45 +1,32 @@
 import { useState } from 'react';
 
 function App() {
-  // count라는 state 변수와 이를 업데이트하는 setCount 함수 생성
-  const [count, setCount] = useState(0);
+  const [votes, setVotes] = useState(0); // 현재 투표 수를 저장하는 상태
+  const [message, setMessage] = useState(''); // 결과 메시지를 저장하는 상태
 
-  // 숫자를 증가시키는 함수
-  const increaseCount = () => {
-    setCount(count + 1);
+  // 투표 수를 증가시키는 함수
+  const increaseVote = () => {
+    setVotes(votes + 1);
+    setMessage(`투표 수가 ${votes + 1}로 업데이트 되었습니다.`);
   };
 
-  // 숫자를 감소시키는 함수
-  const decreaseCount = () => {
-    setCount(count - 1);
-  };
-
-  // 숫자를 초기화하는 함수
-  const resetCount = () => {
-    setCount(0);
+  // 투표 수를 초기화하는 함수
+  const resetVote = () => {
+    setVotes(0);
+    setMessage(`투표 수가 초기화되었습니다.`);
   };
 
   return (
-    <div style={{
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      height: '100vh', 
-      flexDirection: 'column'
-    }}>
-      <h1>Counter</h1>
-      <p>현재 숫자: {count}</p>
-      <div style={{
-        display: 'flex', 
-        gap: '10px' 
-      }}>
-        <button onClick={increaseCount}>증가</button>
-        <button onClick={decreaseCount}>감소</button>
-        <button onClick={resetCount}>초기화</button>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '50px' }}>
+      <h1>간단한 투표 시스템</h1>
+      <p>현재 투표 수: {votes}</p>
+      <p>{message}</p>
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <button onClick={increaseVote}>투표하기</button>
+        <button onClick={resetVote}>초기화</button>
       </div>
     </div>
   );
 }
-
 
 export default App;

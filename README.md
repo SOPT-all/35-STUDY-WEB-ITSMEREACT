@@ -8,10 +8,18 @@
 
 ```
 1. 스터디 레포를 clone 한다.
-2. clone 후 `weekn_이름`으로 브랜치를 판다.
-3. 자신의 이름으로 된 개인 폴더(ex: week1_KIMGEONHWI)에 폴더를 만들고 주차 별로 해당 폴더 안에서 작업한다.
-4. 주차 별 실습 코드를 커밋한다.
-5. 매주 `월요일 22시` 전까지 해당 `Repository`에 pr을 올린다.
-6. pr내용은 간단한 설명과 실습내용을 인증할 수 있는 캡처를 첨부한다.
-7. 제출이 확인되면 스터디장이 Merge한다. (🔥절대!!! 자체적으로 merge 금지)
+2. clone 후 `이름(ex: KIMGEONHWI)`으로 브랜치를 생성한다.
+3. 2번에서 생성한 브랜치 원격에 push를 해준다. "git push origin 이름"
+4. 추가로 주차별 실습 브랜치 'weekn_이름(ex: week1_KIMGEONHWI)'를 생성한다. "git checkout -b weekn_이름" => 해당 브랜치에서 주차별 실습 진행
+5. yarn create vite시 Project name은 주차별 실습 브랜치와 동일하게 'weekn_이름(ex: week1_KIMGEONHWI)'과 같이 생성한다.
+6. 실습 완료 후, 주차 별 실습 브랜치(weekn_이름)에 commit 및 push한다.
 ```
+
+## PR 작성요령
+
+```
+1. 주차별 실습 브랜치(weekn_이름)를 push 후 pr을 작성할 때, base 브랜치를 가이드 2번에서 생성한 '이름' 브랜치로 해준다. => 아래 이미지 참고
+2. pr 템플릿에 맞추어 작성한다.
+3. merge는 스터디장이 확인 후 진행 예정(🔥절대 임의로 merge 하지마세요!!)
+```
+<img width="1225" alt="스크린샷 2024-10-24 오전 3 37 18" src="https://github.com/user-attachments/assets/3d522af4-3126-4821-ad03-728700c0976d">

@@ -63,6 +63,7 @@ const UpdatingObjects = () => {
           onChange={handleTitleChange}
         />
       </label>
+      <br/>
       <label>
         City:
         <input

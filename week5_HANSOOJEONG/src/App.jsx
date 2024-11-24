@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import ControlledComponent from "./components/ControlledComponent";
+import Accordion from "./components/FilterableList";
+import UncontrolledComponent from "./components/UncontrolledComponent";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedComponent, setSelectedComponent] = useState("Accordion");
+
+  const renderComponent = () => {
+    switch (selectedComponent) {
+      case "Accordion":
+        return <Accordion key="Accordion" />;
+      case "Controlled":
+        return <ControlledComponent key="Controlled" />;
+      case "Uncontrolled":
+        return <UncontrolledComponent key="Uncontrolled" />;
+      default:
+        return null;
+    }
+  };
 
   return (
-    <>
+    <div>
+      <h1>5주차 나리스</h1>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button
+          style={{ marginRight: "10px" }}
+          onClick={() => setSelectedComponent("Accordion")}
+        >
+          Accordion
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <button
+          style={{ marginRight: "10px" }}
+          onClick={() => setSelectedComponent("Controlled")}
+        >
+          Controlled Component
+        </button>
+        <button onClick={() => setSelectedComponent("Uncontrolled")}>
+          Uncontrolled Component
+        </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <hr />
+      <div>{renderComponent()}</div>
+    </div>
+  );
 }
 
-export default App
+export default App;

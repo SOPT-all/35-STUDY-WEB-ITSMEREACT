@@ -18,6 +18,7 @@ export default function LifecycleEffects() {
 
   return (
     <>
+      <h3>Effect의 생명주기 챌린징</h3>
       <label>
         <input type="checkbox"
           checked={canMove}

@@ -26,6 +26,7 @@ export default function NotNeedEffect() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h3>Effect가 필요하지 않은 경우 챌린징</h3>
       <textarea
         placeholder="Message"
         value={message}
